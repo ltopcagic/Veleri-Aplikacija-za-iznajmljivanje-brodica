@@ -1,9 +1,4 @@
-$table->foreignId('idGosta');
-            $table->foreignId('idPutovanja');
-            $table->timestamps();
-
-            $table->foreign('idGosta')->references('id')->on('gosts')->onDelete('restrict');
-            $table->foreign('idPutovanja')->references('id')->on('putovanjes')->onDelete('restrict');<?php
+<?php
 
 namespace App\Http\Controllers;
 
