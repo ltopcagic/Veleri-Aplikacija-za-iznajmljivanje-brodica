@@ -24,8 +24,24 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <!-- Ovdje ubacujemo elemente -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Home
+                    Pregled brodica
+                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Pregled putovanja
+                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Pregled iznajmljenih brodica
+                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Pregled rezerviranih putovanja
+                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Pregled čiščenja
+                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Pregled servisa
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -55,7 +71,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->ime }}  {{ Auth::user()->prezime }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
