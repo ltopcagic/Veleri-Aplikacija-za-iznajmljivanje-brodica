@@ -7,9 +7,9 @@
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
             <main role="main" class="inner cover">
-                <h1 class="cover-heading">Aplikacija za iznajmljivanje brodica i rezervaciju putovanja</h1>
+                <h1 class="cover-heading">Aplikacija za iznajmljivanje brodica</h1>
                 <div class="mt-4">
-                    <p class="lead">Aplikacija služi za lakši pregled brodica i dostupnih putovanja.
+                    <p class="lead">Aplikacija služi za bolji pregled i organizaciju brodica u agenciji.
                     </p>
                 </div>
                 <p class="lead">

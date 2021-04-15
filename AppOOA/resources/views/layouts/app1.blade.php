@@ -29,13 +29,7 @@
                     Pregled brodica
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Pregled putovanja
-                </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
                     Pregled iznajmljenih brodica
-                </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Pregled rezerviranih putovanja
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Pregled čiščenja
