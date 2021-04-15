@@ -17,6 +17,7 @@ class CreateIznajmljenaBrodicasTable extends Migration
             $table->id();
             $table->foreignId('idGosta');
             $table->foreignId('idBrodica');
+            $table->date('datum_iznajmljivanja');
             $table->timestamps();
 
             $table->foreign('idGosta')->references('id')->on('gosts')->onDelete('restrict');
