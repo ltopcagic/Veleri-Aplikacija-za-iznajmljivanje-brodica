@@ -9,4 +9,5 @@ class Ciscenja extends Model
 {
     protected $guarded=[];
     use HasFactory;
+    aa
 }
