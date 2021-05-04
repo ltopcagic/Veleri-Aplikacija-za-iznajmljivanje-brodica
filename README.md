@@ -1,2 +1,2 @@
 # veleri
-Aplikacija iznajmljivanja stanova
+Aplikacija iznajmljivanja brodica
