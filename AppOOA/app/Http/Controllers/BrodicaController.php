@@ -14,7 +14,8 @@ class BrodicaController extends Controller
      */
     public function index()
     {
-        //
+        $brodice=Brodica::latest()->get();  //prikaz svih dogadaji koje user nije attendao
+        return view('pregledbrodica', compact('brodice'));
     }
 
     /**
