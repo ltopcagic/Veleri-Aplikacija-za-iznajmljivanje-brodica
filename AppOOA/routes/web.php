@@ -24,3 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Brodice rute
 Route::get('/pregledbrodica', [App\Http\Controllers\BrodicaController::class, 'index']);
+Route::get('/novabrodica/create', [App\Http\Controllers\BrodicaController::class, 'create']);
+Route::post('/novabrodica', [App\Http\Controllers\BrodicaController::class, 'store']);
+

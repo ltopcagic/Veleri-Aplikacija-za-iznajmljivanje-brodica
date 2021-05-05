@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brodica;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BrodicaController extends Controller
 {
@@ -25,7 +26,7 @@ class BrodicaController extends Controller
      */
     public function create()
     {
-        //
+        return view('novabrodica');
     }
 
     /**
@@ -36,7 +37,17 @@ class BrodicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Brodica::create([
+            'naziv'=>$request->naziv,
+            'vrsta'=>$request->vrsta,
+            'broj_ljudi'=>$request->broj_ljudi,
+            'cijena'=>$request->cijena,
+        ]);
+
+        $message="Successfuly Added";
+        $brodice=Brodica::all();
+
+        return view('pregledbrodica', compact('message', 'brodice'));
     }
 
     /**

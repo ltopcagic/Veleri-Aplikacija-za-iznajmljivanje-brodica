@@ -14,7 +14,7 @@
 @endisset
 <body>
     <h1>Pregled brodica</h1><br><br>
-    <a href="" class="btn btn-primary">Unos nove brodice</a><br><br>
+    <a href="/novabrodica/create" class="btn btn-primary">Unos nove brodice</a><br><br>
 
     <table class="table table-light">
         <thead>
