@@ -26,6 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/pregledbrodica', [App\Http\Controllers\BrodicaController::class, 'index']);
 Route::get('/novabrodica/create', [App\Http\Controllers\BrodicaController::class, 'create']);
 Route::post('/novabrodica', [App\Http\Controllers\BrodicaController::class, 'store']);
-Route::get('/pregledbrodica/{brodica}/izmjenabrodice', [App\Http\Controllers\BrodicaController::class, 'edit']);
 Route::put('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'update']);
+Route::get('/pregledbrodica/{brodica}/izmjenabrodice', [App\Http\Controllers\BrodicaController::class, 'edit']);
 

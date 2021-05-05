@@ -42,7 +42,7 @@
                         {{ $brodica->cijena }}
                     </td>
                     <td>
-                        <a href="/pregledbrodica/{brodica}/izmjenabrodice" class="btn btn-primary">Izmjena</a>
+                        <a href="/pregledbrodica/{{ $brodica->id }}/izmjenabrodice" class="btn btn-primary">Izmjena</a>
                     </td>
                     <td>
                         <a href="" class="btn btn-primary">Brisanje</a>
