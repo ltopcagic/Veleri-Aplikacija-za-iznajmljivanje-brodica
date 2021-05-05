@@ -67,9 +67,10 @@ class BrodicaController extends Controller
      * @param  \App\Models\Brodica  $brodica
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brodica $brodica)
+    public function edit($id)
     {
-        //
+        $brodica=Brodica::find($id);
+        return view('izmjenabrodice', compact('brodica'));
     }
 
     /**
@@ -81,7 +82,17 @@ class BrodicaController extends Controller
      */
     public function update(Request $request, Brodica $brodica)
     {
-        //
+        $brodica->update([
+            'naziv'=>$request->naziv,
+            'vrsta'=>$request->vrsta,
+            'broj_ljudi'=>$request->broj_ljudi,
+            'cijena'=>$request->cijena,
+        ]);
+
+        $message="Successfuly Edited";
+        $brodice=Brodica::all();
+
+        return view('pregledbrodica', compact('message', 'brodice'));
     }
 
     /**
