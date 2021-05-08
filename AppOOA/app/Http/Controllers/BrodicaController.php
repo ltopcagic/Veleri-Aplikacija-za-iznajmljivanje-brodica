@@ -15,7 +15,7 @@ class BrodicaController extends Controller
      */
     public function index()
     {
-        $brodice=Brodica::latest()->get();  //prikaz svih dogadaji koje user nije attendao
+        $brodice=Brodica::latest()->get();  
         return view('pregledbrodica', compact('brodice'));
     }
 
@@ -101,8 +101,10 @@ class BrodicaController extends Controller
      * @param  \App\Models\Brodica  $brodica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brodica $brodica)
+    public function destroy($id)
     {
-        //
+        $brodica=Brodica::find($id)->delete();
+        $message="Brodica je uspješno obrisana!";
+        redirect('pregledbrodica',compact('message','brodice'));
     }
 }

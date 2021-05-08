@@ -9,4 +9,11 @@ class Brodica extends Model
 {
     protected $guarded=[];
     use HasFactory;
+
+    public function servisi(){
+        return $this->hasMany(Servisi::class,'brodicaID','id');
+    }
+    public function ciscenja(){
+        return $this->hasMany(Ciscenja::class,'brodicaID','id');
+    }
 }

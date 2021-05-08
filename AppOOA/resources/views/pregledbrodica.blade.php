@@ -45,7 +45,9 @@
                         <a href="/pregledbrodica/{{ $brodica->id }}/izmjenabrodice" class="btn btn-primary">Izmjena</a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-primary">Brisanje</a>
+                        <form action="pregledbrodica/{{ $brodica->id }}"></form>
+                            <button class="btn btn-primary" type="submit">Brisanje</button>
+                        </form>
                     </td>
                     <td>
                         <a href="" class="btn btn-primary">Iznajmljivanje</a>

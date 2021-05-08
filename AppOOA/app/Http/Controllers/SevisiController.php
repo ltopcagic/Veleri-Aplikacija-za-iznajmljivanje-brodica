@@ -14,7 +14,8 @@ class SevisiController extends Controller
      */
     public function index()
     {
-        //
+        $servisi=Sevisi::latest()->get(); 
+        return view('pregledservisa', compact('servisi'));
     }
 
     /**

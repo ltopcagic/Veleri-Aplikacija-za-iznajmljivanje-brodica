@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Pregled čišćenja
                 </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/pregledservisa') }}">
                     Pregled servisa
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
