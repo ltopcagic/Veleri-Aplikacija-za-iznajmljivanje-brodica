@@ -58,13 +58,7 @@
                     <td>
                         <a href="" class="btn btn-primary">Iznajmljivanje</a>
                     </td>
-                    <td>
-                        <a href="" class="btn btn-primary">Novi servis</a>
-                    </td>
-                    <td>
-                        <a href="" class="btn btn-primary">Novo čišćenje</a>
-                    </td>
-
+                    
                 </tr>
             @endforeach
         </tbody>
