@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sevisi;
+use App\Models\Brodica;
 use Illuminate\Http\Request;
 
 class SevisiController extends Controller
@@ -25,7 +26,7 @@ class SevisiController extends Controller
      */
     public function create()
     {
-        //
+        return view('noviservis');
     }
 
     /**
@@ -34,9 +35,19 @@ class SevisiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $brodica=Brodica::find($id);
+        Sevisi::create([
+            'datum'=>$request->datum,
+            'opis'=>$request->opis,
+            'idBrodice'=>$brodica->id,
+        ]);
+
+        $message="Successfuly Added";
+        $servisi=Sevisi::all();
+
+        return view('pregledservisa', compact('message', 'servisi'));
     }
 
     /**

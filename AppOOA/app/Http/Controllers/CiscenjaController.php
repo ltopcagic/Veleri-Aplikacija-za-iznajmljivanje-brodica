@@ -14,7 +14,8 @@ class CiscenjaController extends Controller
      */
     public function index()
     {
-        //
+        $ciscenja=Ciscenja::latest()->get(); 
+        return view('pregledciscenja', compact('ciscenja'));
     }
 
     /**

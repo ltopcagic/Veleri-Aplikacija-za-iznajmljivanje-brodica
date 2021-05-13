@@ -28,10 +28,18 @@ Route::get('/novabrodica/create', [App\Http\Controllers\BrodicaController::class
 Route::post('/novabrodica', [App\Http\Controllers\BrodicaController::class, 'store']);
 Route::put('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'update']);
 Route::get('/pregledbrodica/{brodica}/izmjenabrodice', [App\Http\Controllers\BrodicaController::class, 'edit']);
-Route::delete('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'destroy']);
+Route::get('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'destroy']);
 
 
 //Servisi rute
 
 Route::get('/pregledservisa', [App\Http\Controllers\SevisiController::class, 'index']);
+Route::get('/noviservis/create', [App\Http\Controllers\SevisiController::class, 'create']);
+Route::post('/noviservis', [App\Http\Controllers\SevisiController::class, 'store']);
+
+
+
+//Čišćenja rute
+
+Route::get('/pregledciscenja', [App\Http\Controllers\CiscenjaController::class, 'index']);
 

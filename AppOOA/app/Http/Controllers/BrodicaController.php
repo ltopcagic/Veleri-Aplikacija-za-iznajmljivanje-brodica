@@ -105,6 +105,6 @@ class BrodicaController extends Controller
     {
         $brodica=Brodica::find($id)->delete();
         $message="Brodica je uspješno obrisana!";
-        redirect('pregledbrodica',compact('message','brodice'));
+        return view('pregledbrodica',compact('message','brodice'));
     }
 }

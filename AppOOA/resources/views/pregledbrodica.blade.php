@@ -28,6 +28,8 @@
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
+            <th style="width: 10%"></th>
+            <th style="width: 12%"></th>
         </thead>
         <tbody>
             @foreach ($brodice as $brodica)
@@ -48,12 +50,19 @@
                         <a href="/pregledbrodica/{{ $brodica->id }}/izmjenabrodice" class="btn btn-primary">Izmjena</a>
                     </td>
                     <td>
-                        <form action="pregledbrodica/{{ $brodica->id }}"></form>
+                        <form method="DELETE" action="/pregledbrodica/{{ $brodica->id }}">
+                            @csrf
                             <button class="btn btn-primary" type="submit">Brisanje</button>
                         </form>
                     </td>
                     <td>
                         <a href="" class="btn btn-primary">Iznajmljivanje</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-primary">Novi servis</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-primary">Novo čišćenje</a>
                     </td>
 
                 </tr>
