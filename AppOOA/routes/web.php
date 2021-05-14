@@ -28,7 +28,7 @@ Route::get('/novabrodica/create', [App\Http\Controllers\BrodicaController::class
 Route::post('/novabrodica', [App\Http\Controllers\BrodicaController::class, 'store']);
 Route::put('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'update']);
 Route::get('/pregledbrodica/{brodica}/izmjenabrodice', [App\Http\Controllers\BrodicaController::class, 'edit']);
-Route::get('/pregledbrodica/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'destroy']);
+Route::get('/pregledbrodica/brisanje/{brodica}/', [App\Http\Controllers\BrodicaController::class, 'destroy']);
 
 
 //Servisi rute

@@ -15,7 +15,7 @@ class SevisiController extends Controller
      */
     public function index()
     {
-        $servisi=Sevisi::latest()->get(); 
+        $servisi=Sevisi::latest()->get();
         return view('pregledservisa', compact('servisi'));
     }
 
@@ -26,7 +26,8 @@ class SevisiController extends Controller
      */
     public function create()
     {
-        return view('noviservis');
+        $brodice=Brodica::getall();
+        return view('noviservis', compact('brodice'));
     }
 
     /**
@@ -35,13 +36,12 @@ class SevisiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
-        $brodica=Brodica::find($id);
         Sevisi::create([
             'datum'=>$request->datum,
             'opis'=>$request->opis,
-            'idBrodice'=>$brodica->id,
+            'idBrodice'=>$request->idBrodice,
         ]);
 
         $message="Successfuly Added";

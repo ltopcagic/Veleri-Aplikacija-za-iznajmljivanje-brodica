@@ -9,20 +9,20 @@
     </style>
 
         <h1 >Unos servisa</h1>
-        
+
         <div class='form-group'>
             <label for="idBrodice">Izaberite brodicu za servis:</label><br>
             <select name="idBrodice" id="idBrodice" required style="font-size: 20px">
                 @foreach($brodice as $brodica)
-                <option value="{{ $brodica->id }}">{{ $brodica->id }}, {{ $brodica->naziv }}, {{ $brodica->vrsta }}"></option>
+                <option value="{{ $brodica->id }}">{{ $brodica->naziv }}, {{ $brodica->vrsta }}</option>
                 @endforeach
             </select>
         </div>
-    <form method="POST" action="/noviservis/{{ $servis->id }}">
+    <form method="POST" action="/noviservis">
             @csrf
             <div class="form-group" >
                 <label for="naziv">Datum servisa:</label>
-                <input type="text" class="form-control" id="datum" name="datum"placeholder="Datum servisa" required>
+                <input type="date" class="form-control" id="datum" name="datum"placeholder="Datum servisa" required>
             </div>
             <div class="form-group">
                 <label for="opis_upita">Opis servisa:</label>
