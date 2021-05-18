@@ -36,6 +36,7 @@ Route::get('/pregledbrodica/brisanje/{brodica}/', [App\Http\Controllers\BrodicaC
 Route::get('/pregledservisa', [App\Http\Controllers\SevisiController::class, 'index']);
 Route::get('/noviservis/create', [App\Http\Controllers\SevisiController::class, 'create']);
 Route::post('/noviservis', [App\Http\Controllers\SevisiController::class, 'store']);
+Route::get('/pregledservisa/brisanje/{servis}', [App\Http\Controllers\SevisiController::class, 'destroy']);
 
 
 
@@ -44,4 +45,5 @@ Route::post('/noviservis', [App\Http\Controllers\SevisiController::class, 'store
 Route::get('/pregledciscenja', [App\Http\Controllers\CiscenjaController::class, 'index']);
 Route::get('/novociscenje/create', [App\Http\Controllers\CiscenjaController::class, 'create']);
 Route::post('/novociscenje', [App\Http\Controllers\CiscenjaController::class, 'store']);
+Route::get('/pregledciscenja/brisanje/{ciscenje}', [App\Http\Controllers\CiscenjaController::class, 'destroy']);
 

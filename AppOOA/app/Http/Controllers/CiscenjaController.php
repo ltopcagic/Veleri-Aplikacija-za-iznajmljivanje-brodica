@@ -89,8 +89,10 @@ class CiscenjaController extends Controller
      * @param  \App\Models\Ciscenja  $ciscenja
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ciscenja $ciscenja)
+    public function destroy($id)
     {
-        //
+        $ciscenja=Ciscenja::find($id)->delete();
+        $message="Čišćenje je uspješno uklonjeno!";
+        return redirect()->back();
     }
 }

@@ -56,7 +56,6 @@
                     <td>
                         <a href="" class="btn btn-primary">Iznajmljivanje</a>
                     </td>
-
                 </tr>
             @endforeach
         </tbody>

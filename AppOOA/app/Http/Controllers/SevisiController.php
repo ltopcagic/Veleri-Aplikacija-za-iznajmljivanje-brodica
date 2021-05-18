@@ -90,8 +90,10 @@ class SevisiController extends Controller
      * @param  \App\Models\Sevisi  $sevisi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sevisi $sevisi)
+    public function destroy($id)
     {
-        //
+        $servis=Sevisi::find($id)->delete();
+        $message="Servis je uspješno uklonjen!";
+        return redirect()->back();
     }
 }

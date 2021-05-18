@@ -21,6 +21,7 @@
             <th style="width: 10%">Naziv</th>
             <th style="width: 10%">Vrsta</th>
             <th style="width: 10%">Datum čišćenja</th>
+            <th style="width: 10%"></th>
         </thead>
         <tbody>
             @foreach ($ciscenja as $ciscenje)
@@ -34,7 +35,12 @@
                     <td>
                         {{ $ciscenje->datum }}
                     </td>
-
+                    <td>
+                        <form method="DELETE" action="/pregledciscenja/brisanje/{{ $ciscenje->id }}">
+                            @csrf
+                            <button class="btn btn-primary" type="submit">Brisanje</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

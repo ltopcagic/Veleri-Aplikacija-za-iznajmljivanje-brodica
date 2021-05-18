@@ -22,6 +22,7 @@
             <th style="width: 10%">Vrsta</th>
             <th style="width: 10%">Datum servisa</th>
             <th style="width: 10%">Opis servisa</th>
+            <th style="width: 10%"></th>
         </thead>
         <tbody>
             @foreach ($servisi as $servis)
@@ -38,7 +39,12 @@
                     <td>
                         {{ $servis->opis }}
                     </td>
-    
+                    <td>
+                        <form method="DELETE" action="/pregledservisa/brisanje/{{ $servis->id }}">
+                            @csrf
+                            <button class="btn btn-primary" type="submit">Brisanje</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
