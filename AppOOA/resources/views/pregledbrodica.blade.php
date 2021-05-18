@@ -28,8 +28,6 @@
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
-            <th style="width: 10%"></th>
-            <th style="width: 12%"></th>
         </thead>
         <tbody>
             @foreach ($brodice as $brodica)
