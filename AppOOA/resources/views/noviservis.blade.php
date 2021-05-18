@@ -9,6 +9,8 @@
     </style>
 
         <h1 >Unos servisa</h1>
+        <form method="POST" action="/noviservis">
+            @csrf
 
         <div class='form-group'>
             <label for="idBrodice">Izaberite brodicu za servis:</label><br>
@@ -18,8 +20,7 @@
                 @endforeach
             </select>
         </div>
-    <form method="POST" action="/noviservis">
-            @csrf
+
             <div class="form-group" >
                 <label for="naziv">Datum servisa:</label>
                 <input type="date" class="form-control" id="datum" name="datum"placeholder="Datum servisa" required>

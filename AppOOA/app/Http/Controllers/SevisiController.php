@@ -26,7 +26,7 @@ class SevisiController extends Controller
      */
     public function create()
     {
-        $brodice=Brodica::getall();
+        $brodice=Brodica::all();
         return view('noviservis', compact('brodice'));
     }
 

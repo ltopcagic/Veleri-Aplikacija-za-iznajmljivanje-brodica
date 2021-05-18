@@ -11,6 +11,6 @@ class Ciscenja extends Model
     use HasFactory;
 
     public function brodica(){
-        return $this->belongsTo(Brodica::class,'id');
+        return $this->belongsTo(Brodica::class,'idBrodice');
     }
 }

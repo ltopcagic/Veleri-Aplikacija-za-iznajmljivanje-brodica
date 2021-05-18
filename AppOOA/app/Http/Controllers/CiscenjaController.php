@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brodica;
 use App\Models\Ciscenja;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CiscenjaController extends Controller
      */
     public function index()
     {
-        $ciscenja=Ciscenja::latest()->get(); 
+        $ciscenja=Ciscenja::latest()->get();
         return view('pregledciscenja', compact('ciscenja'));
     }
 
@@ -25,7 +26,8 @@ class CiscenjaController extends Controller
      */
     public function create()
     {
-        //
+        $brodice=Brodica::all();
+        return view('novociscenje', compact('brodice'));
     }
 
     /**
@@ -36,7 +38,15 @@ class CiscenjaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ciscenja::create([
+            'datum'=>$request->datum,
+            'idBrodice'=>$request->idBrodice,
+        ]);
+
+        $message="Successfuly Added";
+        $ciscenja=Ciscenja::all();
+
+        return view('pregledciscenja', compact('message', 'ciscenja'));
     }
 
     /**

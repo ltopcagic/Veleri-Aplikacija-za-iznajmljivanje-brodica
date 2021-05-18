@@ -21,7 +21,6 @@
             <th style="width: 10%">Naziv</th>
             <th style="width: 10%">Vrsta</th>
             <th style="width: 10%">Datum čišćenja</th>
-            <th style="width: 10%">Opis servisa</th>
         </thead>
         <tbody>
             @foreach ($ciscenja as $ciscenje)
@@ -35,7 +34,7 @@
                     <td>
                         {{ $ciscenje->datum }}
                     </td>
-    
+
                 </tr>
             @endforeach
         </tbody>

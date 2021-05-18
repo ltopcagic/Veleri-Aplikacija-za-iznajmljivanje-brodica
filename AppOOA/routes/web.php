@@ -42,4 +42,6 @@ Route::post('/noviservis', [App\Http\Controllers\SevisiController::class, 'store
 //Čišćenja rute
 
 Route::get('/pregledciscenja', [App\Http\Controllers\CiscenjaController::class, 'index']);
+Route::get('/novociscenje/create', [App\Http\Controllers\CiscenjaController::class, 'create']);
+Route::post('/novociscenje', [App\Http\Controllers\CiscenjaController::class, 'store']);
 
