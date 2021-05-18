@@ -13,10 +13,13 @@
     </div>
 @endisset
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <h1>Pregled servisa</h1><br><br>
     <a href="/noviservis/create" class="btn btn-primary">Unos novog servisa</a><br><br>
 
-    <table class="table table-light">
+    <table id= 'table' class="table table-light">
         <thead>
             <th style="width: 10%">Naziv</th>
             <th style="width: 10%">Vrsta</th>
@@ -50,5 +53,10 @@
         </tbody>
     </table>
 </body>
+<script>
+    $(window).on("load", function () {
+            $('#table').DataTable();
+        });
+    </script>
 
 @endsection
