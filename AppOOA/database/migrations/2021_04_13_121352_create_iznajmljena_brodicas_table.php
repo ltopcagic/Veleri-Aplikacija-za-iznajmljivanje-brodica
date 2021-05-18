@@ -15,12 +15,14 @@ class CreateIznajmljenaBrodicasTable extends Migration
     {
         Schema::create('iznajmljena_brodicas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idGosta');
             $table->foreignId('idBrodica');
+            $table->string('ime_gosta');
+            $table->string('prezime_gosta');
+            $table->string('email_gosta');
+            $table->integer('telefon_gosta');
             $table->date('datum_iznajmljivanja');
             $table->timestamps();
 
-            $table->foreign('idGosta')->references('id')->on('gosts')->onDelete('restrict');
             $table->foreign('idBrodica')->references('id')->on('brodicas')->onDelete('restrict');
         });
     }
