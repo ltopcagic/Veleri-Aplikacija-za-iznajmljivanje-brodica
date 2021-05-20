@@ -34,7 +34,7 @@
                 <a class="navbar-brand" href="{{ url('/pregledbrodica') }}">
                     Pregled brodica
                 </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/preglediznajmljenihbrodica') }}">
                     Pregled iznajmljenih brodica
                 </a>
                 <a class="navbar-brand" href="{{ url('/pregledciscenja') }}">

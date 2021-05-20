@@ -15,7 +15,8 @@ class IznajmljenaBrodicaController extends Controller
      */
     public function index()
     {
-        //
+        $iznajmljenebrodice=Iznajmljena_brodica::latest()->get();
+        return view('preglediznajmljenihbrodica', compact('iznajmljenebrodice'));
     }
 
     /**
@@ -93,8 +94,10 @@ class IznajmljenaBrodicaController extends Controller
      * @param  \App\Models\Iznajmljena_brodica  $iznajmljena_brodica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Iznajmljena_brodica $iznajmljena_brodica)
+    public function destroy($id)
     {
-        //
+        $iznajmljenabrodica=Iznajmljena_brodica::find($id)->delete();
+        $message="Iznajmljena brodica je uspješno uklonjena!";
+        return redirect()->back();
     }
 }

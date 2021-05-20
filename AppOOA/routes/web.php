@@ -49,5 +49,7 @@ Route::get('/pregledciscenja/brisanje/{ciscenje}', [App\Http\Controllers\Ciscenj
 
 //Iznajmljivanje brodice
 
+Route::get('/preglediznajmljenihbrodica', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'index']);
 Route::get('/iznajmljivanjebrodice/{brodica}/', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'create']);
 Route::post('/iznajmljivanjebrodice/{brodica}/', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'store']);
+Route::get('/preglediznajmljenihbrodica/brisanje/{iznajmljenabrodica}', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'destroy']);
