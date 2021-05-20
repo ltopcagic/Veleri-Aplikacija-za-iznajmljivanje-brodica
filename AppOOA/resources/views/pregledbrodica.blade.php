@@ -54,7 +54,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="" class="btn btn-primary">Iznajmljivanje</a>
+                        <a href="iznajmljivanjebrodice/{{ $brodica->id }}" class="btn btn-primary">Iznajmljivanje</a>
                     </td>
                 </tr>
             @endforeach

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Iznajmljena_brodica;
+use App\Models\Brodica;
 use Illuminate\Http\Request;
+use App\Models\Iznajmljena_brodica;
 
 class IznajmljenaBrodicaController extends Controller
 {
@@ -22,9 +23,10 @@ class IznajmljenaBrodicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $brodica=Brodica::find($id);
+        return view('iznajmljivanjebrodice', compact('brodica'));
     }
 
     /**
