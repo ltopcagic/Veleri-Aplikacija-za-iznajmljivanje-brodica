@@ -50,3 +50,4 @@ Route::get('/pregledciscenja/brisanje/{ciscenje}', [App\Http\Controllers\Ciscenj
 //Iznajmljivanje brodice
 
 Route::get('/iznajmljivanjebrodice/{brodica}/', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'create']);
+Route::post('/iznajmljivanjebrodice/{brodica}/', [App\Http\Controllers\IznajmljenaBrodicaController::class, 'store']);

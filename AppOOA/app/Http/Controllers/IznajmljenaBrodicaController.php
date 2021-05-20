@@ -35,9 +35,22 @@ class IznajmljenaBrodicaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $brodica=Brodica::find($id);
+       
+        /** @if (Iznajmljenabrodica::where('datum_iznajmljivanja', '=', Input::get('datum_iznajmljivanja'))->exists() || 'idBrodice', '=', Input::get('idBrodice'))->exists()) {*/
+            
+        Iznajmljena_brodica::create([
+            'idBrodica'=>$brodica->id,
+            'ime_gosta'=>$request->ime_gosta,
+            'prezime_gosta'=>$request->prezime_gosta,
+            'email_gosta'=>$request->email_gosta,
+            'telefon_gosta'=>$request->telefon_gosta,
+            'datum_iznajmljivanja'=>$request->datum_iznajmljivanja,
+        ]);
+
+        return redirect('/pregledbrodica');
     }
 
     /**

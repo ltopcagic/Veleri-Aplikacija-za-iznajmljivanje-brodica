@@ -25,8 +25,7 @@
             <label>Cijena: {{ $brodica->cijena }}</label>
         </div>
 
-
-    <form method="POST" action="/iznajmljivanje_brodice/{{ $brodica->id }}">
+    <form method="POST" action="/iznajmljivanjebrodice/{{ $brodica->id }}">
             @csrf
             <div class="form-group" >
                 <label for="naziv">Ime gosta:</label>
@@ -51,7 +50,9 @@
             <div class="form-group">
                 <label for="broj_ljudi">Datum iznajmljivanja:</label>
                 <input type="date" class="form-control"  id="datum_iznajmljivanja" name="datum_iznajmljivanja" required>
-            </div>    
+            </div>
+            
+            <button class="btn btn-primary" type="submit" style="margin-left: 7%">Iznajmi</button>
             
     </form>
 @endsection
