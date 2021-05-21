@@ -39,8 +39,9 @@
                         {{ $ciscenje->datum }}
                     </td>
                     <td>
-                        <form method="DELETE" action="/pregledciscenja/brisanje/{{ $ciscenje->id }}">
+                        <form method="POST" action="/pregledciscenja/brisanje/{{ $ciscenje->id }}">
                             @csrf
+                            @method('delete')
                             <button class="btn btn-primary" type="submit">Brisanje</button>
                         </form>
                     </td>

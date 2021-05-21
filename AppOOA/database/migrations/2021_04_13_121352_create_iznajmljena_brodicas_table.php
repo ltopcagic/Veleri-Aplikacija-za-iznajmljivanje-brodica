@@ -23,7 +23,7 @@ class CreateIznajmljenaBrodicasTable extends Migration
             $table->date('datum_iznajmljivanja');
             $table->timestamps();
 
-            $table->foreign('idBrodica')->references('id')->on('brodicas')->onDelete('restrict');
+            $table->foreign('idBrodica')->references('id')->on('brodicas')->onDelete('cascade');
         });
     }
 

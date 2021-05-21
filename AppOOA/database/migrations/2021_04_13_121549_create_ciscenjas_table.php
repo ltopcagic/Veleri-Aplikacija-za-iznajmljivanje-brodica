@@ -19,7 +19,7 @@ class CreateCiscenjasTable extends Migration
             $table->date('datum');
             $table->timestamps();
 
-            $table->foreign('idBrodice')->references('id')->on('brodicas')->onDelete('restrict');
+            $table->foreign('idBrodice')->references('id')->on('brodicas')->onDelete('cascade');
         });
     }
 

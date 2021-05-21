@@ -20,7 +20,7 @@ class CreateSevisisTable extends Migration
             $table->string('opis');
             $table->timestamps();
 
-            $table->foreign('idBrodice')->references('id')->on('brodicas')->onDelete('restrict');
+            $table->foreign('idBrodice')->references('id')->on('brodicas')->onDelete('cascade');
         });
     }
 

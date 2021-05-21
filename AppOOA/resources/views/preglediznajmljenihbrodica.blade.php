@@ -8,7 +8,7 @@
 
 @section('content')
 @isset($message)
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-succes" role="alert">
         {{ $message }}
     </div>
 @endisset
@@ -47,7 +47,7 @@
                     </td>
                     <td>
                         {{ $iznajmljenabrodica->prezime_gosta }}
-                    </td> 
+                    </td>
                     <td>
                         {{ $iznajmljenabrodica->email_gosta }}
                     </td>
@@ -58,8 +58,9 @@
                         {{ $iznajmljenabrodica->datum_iznajmljivanja }}
                     </td>
                     <td>
-                        <form method="DELETE" action="/preglediznajmljenihbrodica/brisanje/{{ $iznajmljenabrodica->id }}">
+                        <form method="POST" action="/preglediznajmljenihbrodica/brisanje/{{ $iznajmljenabrodica->id }}">
                             @csrf
+                            @method('delete')
                             <button class="btn btn-primary" type="submit">Brisanje</button>
                         </form>
                     </td>

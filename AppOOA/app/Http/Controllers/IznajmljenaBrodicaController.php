@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Brodica;
 use Illuminate\Http\Request;
 use App\Models\Iznajmljena_brodica;
@@ -39,19 +40,31 @@ class IznajmljenaBrodicaController extends Controller
     public function store(Request $request, $id)
     {
         $brodica=Brodica::find($id);
-       
-        /** @if (Iznajmljenabrodica::where('datum_iznajmljivanja', '=', Input::get('datum_iznajmljivanja'))->exists() || 'idBrodice', '=', Input::get('idBrodice'))->exists()) {*/
-            
-        Iznajmljena_brodica::create([
-            'idBrodica'=>$brodica->id,
-            'ime_gosta'=>$request->ime_gosta,
-            'prezime_gosta'=>$request->prezime_gosta,
-            'email_gosta'=>$request->email_gosta,
-            'telefon_gosta'=>$request->telefon_gosta,
-            'datum_iznajmljivanja'=>$request->datum_iznajmljivanja,
-        ]);
+        $iznajmljenebrodice=Iznajmljena_brodica::get()->all();
+        foreach ($iznajmljenebrodice as $izn ) {
+            if($izn->datum_iznajmljivanja == $request->datum_iznajmljivanja){
+                $message="Brodica je vec iznajmljena na taj datum!";
+                return view('iznajmljivanjebrodice', compact('message', 'brodica'));
+            }else{
+                $request->validate([
+                    'ime_gosta' => 'min:2 | required ',
+                    'prezime_gosta'=> 'min:2 | required',
+                    'email_gosta' => 'min:5 | required',
+                    'telefon_gosta' => 'min:7 | required',
+                    'datum_iznajmljivanja' => 'required | after:yesterday',
+                ]);
+                Iznajmljena_brodica::create([
+                    'idBrodica'=>$brodica->id,
+                    'ime_gosta'=>$request->ime_gosta,
+                    'prezime_gosta'=>$request->prezime_gosta,
+                    'email_gosta'=>$request->email_gosta,
+                    'telefon_gosta'=>$request->telefon_gosta,
+                    'datum_iznajmljivanja'=>$request->datum_iznajmljivanja,
+                ]);
 
-        return redirect('/pregledbrodica');
+                return redirect('/pregledbrodica');
+            }
+        }
     }
 
     /**

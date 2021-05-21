@@ -9,4 +9,8 @@ class Iznajmljena_brodica extends Model
 {
     protected $guarded=[];
     use HasFactory;
+
+    public function brodica(){
+        return $this->belongsTo(Brodica::class,'idBrodica');
+    }
 }

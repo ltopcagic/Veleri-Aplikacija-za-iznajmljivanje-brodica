@@ -43,8 +43,9 @@
                         {{ $servis->opis }}
                     </td>
                     <td>
-                        <form method="DELETE" action="/pregledservisa/brisanje/{{ $servis->id }}">
+                        <form method="POST" action="/pregledservisa/brisanje/{{ $servis->id }}">
                             @csrf
+                            @method('delete')
                             <button class="btn btn-primary" type="submit">Brisanje</button>
                         </form>
                     </td>

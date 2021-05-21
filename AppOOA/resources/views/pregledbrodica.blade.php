@@ -48,8 +48,9 @@
                         <a href="/pregledbrodica/{{ $brodica->id }}/izmjenabrodice" class="btn btn-primary">Izmjena</a>
                     </td>
                     <td>
-                        <form method="DELETE" action="/pregledbrodica/brisanje/{{ $brodica->id }}">
+                        <form method="POST" action="/pregledbrodica/brisanje/{{ $brodica->id }}">
                             @csrf
+                            @method('delete')
                             <button class="btn btn-primary" type="submit">Brisanje</button>
                         </form>
                     </td>
