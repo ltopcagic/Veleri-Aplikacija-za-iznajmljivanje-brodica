@@ -16,6 +16,7 @@ class IznajmljenaBrodicaController extends Controller
      */
     public function index()
     {
+        $dateToday = new Carbon(now());
         $iznajmljenebrodice=Iznajmljena_brodica::latest()->get();
         return view('preglediznajmljenihbrodica', compact('iznajmljenebrodice'));
     }
@@ -40,31 +41,30 @@ class IznajmljenaBrodicaController extends Controller
     public function store(Request $request, $id)
     {
         $brodica=Brodica::find($id);
-        $iznajmljenebrodice=Iznajmljena_brodica::get()->all();
-        foreach ($iznajmljenebrodice as $izn ) {
-            if($izn->datum_iznajmljivanja == $request->datum_iznajmljivanja){
-                $message="Brodica je vec iznajmljena na taj datum!";
-                return view('iznajmljivanjebrodice', compact('message', 'brodica'));
-            }else{
-                $request->validate([
-                    'ime_gosta' => 'min:2 | required ',
-                    'prezime_gosta'=> 'min:2 | required',
-                    'email_gosta' => 'min:5 | required',
-                    'telefon_gosta' => 'min:7 | required',
-                    'datum_iznajmljivanja' => 'required | after:yesterday',
-                ]);
-                Iznajmljena_brodica::create([
-                    'idBrodica'=>$brodica->id,
-                    'ime_gosta'=>$request->ime_gosta,
-                    'prezime_gosta'=>$request->prezime_gosta,
-                    'email_gosta'=>$request->email_gosta,
-                    'telefon_gosta'=>$request->telefon_gosta,
-                    'datum_iznajmljivanja'=>$request->datum_iznajmljivanja,
-                ]);
-
-                return redirect('/pregledbrodica');
-            }
+        //$iznajmljenebrodice=Iznajmljena_brodica::get()->all();
+        $Boolean=Iznajmljena_Brodica::where('datum_iznajmljivanja', $request->datum_iznajmljivanja)->exists();
+        if($Boolean==true){
+            $message="Brodica je vec iznajmljena na taj datum!";
+            return view('iznajmljivanjebrodice', compact('message', 'brodica'));
+        }else{
+            $request->validate([
+                'ime_gosta' => 'min:2 | required ',
+                'prezime_gosta'=> 'min:2 | required',
+                'email_gosta' => 'min:5 | required',
+                'telefon_gosta' => 'min:7 | required',
+                'datum_iznajmljivanja' => 'required | after:yesterday',
+            ]);
+            Iznajmljena_brodica::create([
+                'idBrodica'=>$brodica->id,
+                'ime_gosta'=>$request->ime_gosta,
+                'prezime_gosta'=>$request->prezime_gosta,
+                'email_gosta'=>$request->email_gosta,
+                'telefon_gosta'=>$request->telefon_gosta,
+                'datum_iznajmljivanja'=>$request->datum_iznajmljivanja,
+            ]);
+            return redirect('/pregledbrodica');
         }
+
     }
 
     /**
