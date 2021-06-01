@@ -19,7 +19,7 @@ class CreateIznajmljenaBrodicasTable extends Migration
             $table->string('ime_gosta');
             $table->string('prezime_gosta');
             $table->string('email_gosta');
-            $table->integer('telefon_gosta');
+            $table->string('telefon_gosta');
             $table->date('datum_iznajmljivanja');
             $table->timestamps();
 

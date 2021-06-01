@@ -51,8 +51,8 @@ class IznajmljenaBrodicaController extends Controller
                 'ime_gosta' => 'min:2 | required ',
                 'prezime_gosta'=> 'min:2 | required',
                 'email_gosta' => 'min:5 | required',
-                'telefon_gosta' => 'min:7 | required',
-                'datum_iznajmljivanja' => 'required | after:yesterday',
+                'telefon_gosta' => ' required | digits_between:7,14',
+                'datum_iznajmljivanja' => 'required | after:yesterday ',
             ]);
             Iznajmljena_brodica::create([
                 'idBrodica'=>$brodica->id,
