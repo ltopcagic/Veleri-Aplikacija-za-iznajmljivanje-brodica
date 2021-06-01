@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sevisi;
 use App\Models\Brodica;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SevisiController extends Controller
 {
@@ -15,6 +16,7 @@ class SevisiController extends Controller
      */
     public function index()
     {
+        $user=Auth::user()->id;
         $servisi=Sevisi::latest()->get();
         return view('pregledservisa', compact('servisi'));
     }

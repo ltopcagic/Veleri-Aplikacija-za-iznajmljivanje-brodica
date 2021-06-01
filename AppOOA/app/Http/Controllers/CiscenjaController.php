@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brodica;
 use App\Models\Ciscenja;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CiscenjaController extends Controller
 {
@@ -15,6 +16,7 @@ class CiscenjaController extends Controller
      */
     public function index()
     {
+        $user=Auth::user()->id;
         $ciscenja=Ciscenja::latest()->get();
         return view('pregledciscenja', compact('ciscenja'));
     }

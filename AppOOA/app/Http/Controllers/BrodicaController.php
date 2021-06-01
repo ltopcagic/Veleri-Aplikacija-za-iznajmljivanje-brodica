@@ -15,6 +15,7 @@ class BrodicaController extends Controller
      */
     public function index()
     {
+        $user=Auth::user()->id;
         $brodice=Brodica::latest()->get();
         return view('pregledbrodica', compact('brodice'));
     }

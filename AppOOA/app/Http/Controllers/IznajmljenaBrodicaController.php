@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Brodica;
 use Illuminate\Http\Request;
 use App\Models\Iznajmljena_brodica;
+use Illuminate\Support\Facades\Auth;
 
 class IznajmljenaBrodicaController extends Controller
 {
@@ -16,6 +17,7 @@ class IznajmljenaBrodicaController extends Controller
      */
     public function index()
     {
+        $user=Auth::user()->id;
         $dateToday = new Carbon(now());
         $iznajmljenebrodice=Iznajmljena_brodica::latest()->get();
         return view('preglediznajmljenihbrodica', compact('iznajmljenebrodice'));
