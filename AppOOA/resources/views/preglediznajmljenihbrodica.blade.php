@@ -22,7 +22,7 @@
         <thead>
             <th style="width: 10%">Naziv brodice</th>
             <th style="width: 10%">Vrsta brodice</th>
-            <th style="width: 10%">Cijena</th>
+            <th style="width: 10%">Cijena (kn/sat)</th>
             <th style="width: 10%">Ime gosta</th>
             <th style="width: 10%">Prezime gosta</th>
             <th style="width: 10%">Email</th>

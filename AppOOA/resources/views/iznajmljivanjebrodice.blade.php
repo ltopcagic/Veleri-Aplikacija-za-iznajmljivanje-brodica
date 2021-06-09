@@ -28,14 +28,14 @@
         </div>
 
         <div class="form-group" >
-            <label>Cijena: {{ $brodica->cijena }}</label>
+            <label>Cijena po satu: {{ $brodica->cijena }}</label>
         </div>
 
     <form method="POST" action="/iznajmljivanjebrodice/{{ $brodica->id }}">
             @csrf
             <div class="form-group" >
                 <label for="naziv">Ime gosta:</label>
-                <input type="text" class="form-control" id="ime_gosta" name="ime_gosta"placeholder="Ime gosta" required>
+                <input type="text" class="form-control" id="ime_gosta" name="ime_gosta"placeholder="Ime gosta" value="{{ old('') }}" required>
             </div>
 
             <div class="form-group" >

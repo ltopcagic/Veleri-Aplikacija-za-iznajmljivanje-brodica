@@ -24,7 +24,7 @@
             <th style="width: 10%">Naziv</th>
             <th style="width: 10%">Vrsta</th>
             <th style="width: 10%">Broj ljudi</th>
-            <th style="width: 10%">Cijena iznajmljivanja</th>
+            <th style="width: 10%">Cijena iznajmljivanja (kn/sat)</th>
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
             <th style="width: 10%"></th>
