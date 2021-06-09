@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group" >
-            <label>Cijena po satu: {{ $brodica->cijena }}</label>
+            <label>Cijena po danu: {{ $brodica->cijena }}</label>
         </div>
 
     <form method="POST" action="/iznajmljivanjebrodice/{{ $brodica->id }}">

@@ -10,8 +10,8 @@
     </style>
     <form method="POST" action="/novabrodica">
     @csrf
-        
-        
+
+
         <h1 >Unos nove brodice</h1>
         <div class="form-group" >
             <label for="naziv">Naziv brodice:</label>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <label for="cijena">Cijena iznajmljivanja brodice:</label>
+            <label for="cijena">Cijena iznajmljivanja brodice (kn/dan):</label>
             <input type="number" class="form-control" value="0" id="cijena" name="cijena" required>
         </div>
 

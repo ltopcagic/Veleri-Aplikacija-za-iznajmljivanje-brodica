@@ -30,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            <label for="cijena">Cijena iznajmljivanja brodice:</label>
+            <label for="cijena">Cijena iznajmljivanja brodice (kn/dan):</label>
             <input type="number" class="form-control"  id="cijena" name="cijena" required value="{{ $brodica->cijena }}">
         </div>
 
