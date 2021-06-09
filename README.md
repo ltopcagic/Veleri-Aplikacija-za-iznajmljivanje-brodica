@@ -1,12 +1,10 @@
-# veleri
-Aplikacija iznajmljivanja brodica
+# Aplikacija za iznajmljivanje brodica
 
-
-Kratki opis aplikacije
+**Kratki opis aplikacije
 
 Aplikacija je namijenjena agenciji koja se bavi iznajmljivanjem brodica. Korisnici aplikacije imaju mogućnosti evidentiranja svih brodica kojima agencija raspolaže, također i izmjenu ili brisanje brodica u slučaju da se agencija riješila nekih brodica. Glavna funkcija aplikacije jest samo iznajmljivanje brodica u kojem korisnik izabire brodicu koju klijent želi iznajmiti, upisuje podatke o klijentu te datum iznajmljivanja i brodica se iznajmljuje, ukoliko ista brodica nije već iznajmljena na isti datum. Korisnik također ima evidenciju svih iznajmljenih brodica s imenima klijenata i datumima iznajmljivanja, a iznajmljivanja može i otkazati u slučaju nemogućnosti klijenta da iznajmi brodicu na određeni datum. Korisnik u aplikaciji ima još dvije mogućnosti a to su pregledi i unosi servisa i čišćenja brodica kako bi se njihovo upravljanje i održavanje moglo kontrolirati.
 
-Korisničke upute
+**Korisničke upute
 
 Kada se aplikacija pokrene korisnik ima dvije mogućnosti: prijavu i registraciju. Ukoliko se korisnik prethodno nije registrirao, ide na registraciju, upisuje tražene podatke i klikom na gumb registriraj dolazi na početan zaslon aplikacije nakon prijave koji predstavlja pregled brodica. Ako se korisnik nekada prethodno registrirao tada u prvom koraku bira prijavu te upisuje E-mail i lozinku.
 	Nakon što se korisnik prijavio ili registrirao prikazuje mu se sučelje pregled brodica na kojem može vidjeti popis svih evidentiranih brodica te za svaku od njih ima tri mogućnosti, izmijeniti, obrisati ili iznajmiti brodicu.  Na ovom sučelju korisnik također može vidjeti gumb za unos nove brodice te izbornik u zaglavlju koji je prikazan na svim stranicama aplikacije. Izbornik se sastoji od pregleda brodica, pregleda iznajmljenih brodica, pregleda servisa i pregleda čišćenja.
