@@ -18,4 +18,16 @@ U prozoru pregled čišćenja korisnik može vidjeti sva evidentirana čišćenj
 	
 Zadnja mogućnost u izborniku jest pregled servisa koji funkcionira jednako kao i pregled čišćenja, jedina razlika je što se prilikom unosa novog servisa može dodati i opis servisa kako bi se evidentiralo što se točno radilo na brodici.
 
-U desnom kutu izbornika korisniku se pojavljuje njegovo ime i prezime te strelica na dolje koju kada klikne korisnik može izabrati odjavu te na taj način izaći iz aplikacije. 
+U desnom kutu izbornika korisniku se pojavljuje njegovo ime i prezime te strelica na dolje koju kada klikne korisnik može izabrati odjavu te na taj način izaći iz aplikacije.
+
+
+**Pokretanje aplikacije**
+
+Što se tiče pokretanja aplikacije, prvo je potrebno projekt klonirati s GitHub-a. Da bi aplikacija funkcionirala potrebno je preuzeti sljedeće alate:
+•	Git v2.32.
+•	Composer v2.0.13.
+•	Xampp v8.0.3.
+Kada se projekt klonira s GitHub-a, potrebno je u Visual Studio Code-u pritisnuti gumb „Clone repository“ i i prethodno klonirana aplikacija zalijepi se u za to predviđeni prostor.
+Nakon otvaranja aplikacije potrebno je desnim klikom na ime aplikacije otvoriti njezin integrirani terminal i u njega upisati naredbu „composer install“. Kada Composer završi instalaciju trebali biste u datotekama aplikacije pronaći .env.example dokument. Taj dokument treba preimenovati u samo .env i podesiti server na „student.veleri.hr“, ime baze podataka na „ilucic“ i lozinku na „11“.
+Kada je sve prethodno napravljeno u otvoreni terminal aplikacije upisuje se naredba „php artisan serve“ kojom se pokreće server za podizanje aplikacije. Držanjem tipke „ctrl“ i klikom na IP adresu servera, aplikacije se otvara u web pregledniku i spremna je za korištenje.
+
